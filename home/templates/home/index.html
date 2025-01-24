@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+{% block start %}
+  <a href="/contact/">contact</a>
+  |
+  <a href="/about/">about</a>
+  <table border="3">
+    <tr>
+      <th>srNo</th>
+      <th>Name</th>
+      <th>age</th>
+      <th> can vote</th>
+
+    </tr>
+    {% for people in peoples %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{people.name}}</td>
+      <td>{{people.age}}</td>
+      <td>
+        {% if people.age >= 18 %}
+        👍
+        {% else %}
+        👎
+        {% endif %}
+
+      </td>
+
+    </tr>
+    {% endfor %}
+    <!-- <p>
+        {{text |truncatechars:50}}
+      </p> -->
+
+
+
+  </table>
+  <p>
+    {% if "tomato" in vegetables %}
+    yes avilable
+    {% endif %}
+  </p>
+  {% endblock %}
