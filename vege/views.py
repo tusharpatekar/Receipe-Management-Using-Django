@@ -73,7 +73,7 @@ def login_page(request):
             messages.error(request, "User is not exist")
             return redirect('/login/')
         user = authenticate(username = username, password = password)
-
+    
         if user is None:
             messages.error(request, 'Invalid Creadentials')
             return redirect('/login/')
